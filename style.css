@@ -7,3 +7,6 @@ body{
 #myCanvas{
     background:lightgray;
 }
+#networkCanvas{
+    background:black;
+}
