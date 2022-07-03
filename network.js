@@ -17,7 +17,26 @@ class NeuralNetwork{
         }
         return outputs;
     }
-
+    static mutate(network,amount=1){
+        network.levels.forEach(level => {
+            for(let i=0;i<level.biases.length;i++){
+                level.biases[i]=lerp(
+                    level.biases[i],
+                    Math.random()*2-1,
+                    amount
+                )
+            }
+            for(let i=0;i<level.weigths.length;i++){
+                for(let j=0;j<level.weigths[i].length;j++){
+                    level.weigths[i][j]=lerp(
+                        level.weigths[i][j],
+                        Math.random()*2-1,
+                        amount
+                    )
+                }
+            }
+        })
+    }
 }
 
 class Level{
